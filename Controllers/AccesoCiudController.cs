@@ -23,6 +23,7 @@ namespace opinicion_ciudadana.Controllers
         // GET: AccesoCiud
         public ActionResult Index()
         {
+            ViewBag.Message = "Estimado Ciudadano, recuerda que la contraseña por defecto es su Nro de identiticación";
             return View();
         }
         [HttpPost]

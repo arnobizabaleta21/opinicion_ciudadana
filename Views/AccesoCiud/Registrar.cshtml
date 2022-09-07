@@ -8,7 +8,9 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-
+<head>
+    <title>Registrar Ciudadano</title>
+</head>
 <div class="sidenav">
     <div class="login-main-text">
         <h1>Participación ciudadana</h1><br>
@@ -46,7 +48,7 @@
                 <div class="form-group">
                     <label>Sexo: </label><br />
                     <select name="SEXO" class="input" required>
-                        <option selected>Seleccionar</option>
+                        
                         <option value="Hombre">Hombre</option>
                         <option value="Mujer"> Mujer</option>
                         <option value="Intersexual">InterSexual</option>
@@ -91,30 +93,33 @@
 
                 <div class="form-group">
                     <label>Etnia: </label><br />
-                    <select name="ETNIA" class="input" required>
-                        <option selected>Seleccionar</option>
-                        <option value="Negro">Negro</option>
-                        <option value="Mulato">Mulato</option>
-                        <option value="Indigena">Indigena</option>
-                        <option value="Afrodescendiente">Afrodescendiente</option>
-                        <option value="Raizal">Raizal</option>
-                        <option value="Palenquero">Palenquero</option>
-                        <option value="Gitano">Gitano</option>
-                        <option value="Otro">Otro</option>
-                    </select>
+                                          <select name="ETNIA" class="input" required>
+
+                                              <option value="Negro">Negro</option>
+                                              <option value="Mulato">Mulato</option>
+                                              <option value="Indigena">Indigena</option>
+                                              <option value="Afrodescendiente">Afrodescendiente</option>
+                                              <option value="Raizal">Raizal</option>
+                                              <option value="Palenquero">Palenquero</option>
+                                              <option value="Gitano">Gitano</option>
+                                              <option value="Otro">Otro</option>
+                                              <option value="Otro">Otro</option>
+                                              <option value="Ninguno">Ninguno</option>
+                                          </select>
                 </div>
 
                 <div class="form-group">
                     <label>Condición de Discapacidad: </label><br />
-                    <select name="CONDICION_DISCAPACIDAD" class="input" required>
-                        <option selected>Seleccionar</option>
-                        <option value="Fisica">Discapacidad Física o Motora</option>
-                        <option value="Sensorial">Discapacidad Sensorial</option>
-                        <option value="Intelectual">Discapacidad intelectual</option>
-                        <option value="Psiquica">Discapacidad Psíquica</option>
-                        <option value="Multiple">Discapacidad múltiple</option>
-                        <option value="Otro">Otro</option>
-                    </select>
+                                                              <select name="CONDICION_DISCAPACIDAD" class="input" required>
+                                                                  
+                                                                  <option value="Fisica">Discapacidad Física o Motora</option>
+                                                                  <option value="Sensorial">Discapacidad Sensorial</option>
+                                                                  <option value="Intelectual">Discapacidad intelectual</option>
+                                                                  <option value="Psiquica">Discapacidad Psíquica</option>
+                                                                  <option value="Multiple">Discapacidad múltiple</option>
+                                                                  <option value="Otro">Otro</option>
+                                                                  <option value="Ninguno">Ninguno</option>
+                                                              </select>
                 </div>
 
                 <div class="form-group">
@@ -125,7 +130,7 @@
                 <div class="form-group">
                     <label>Último nivel educativo alcanzado: </label>
                     <select name="NIVEL_EDUCATIVO" class="input" required>
-                        <option selected>Seleccionar</option>
+                       
                         <option value="Preescolar">Educación preescolar</option>
                         <option value="Basica">Educación básica</option>
                         <option value="Media">Educación media</option>
@@ -138,7 +143,7 @@
                 <div class="form-group">
                     <label>¿Cuenta con acceso a dispositivos tecnológicos?</label><br />
                     <select name="ACCESO_DISPOSITIVOS" class="input" required>
-                        <option selected>Seleccionar</option>
+                        
                         <option value="yes">Si</option>
                         <option value="not">No</option>
                     </select>
@@ -147,7 +152,7 @@
                 <div class="form-group">
                     <label>Si, la respuesta 3.1 fue afirmativa ¿cuál o cuáles?</label><br />
                     <select name="TIPO_DISPOSITIVOS" class="input" required>
-                        <option selected>Seleccionar</option>
+                        <option value="NULL" selected>Seleccionar</option>
                         <option value="computador">Computador</option>
                         <option value="tablet">Tablet</option>
                     </select>
@@ -156,7 +161,7 @@
                 <div class="form-group">
                     <label>¿Cuenta con conectividad a internet? </label><br />
                     <select name="CONECTIVIDAD" class="input">
-                        <option selected>Seleccionar</option>
+                       
                         <option value="yes">Sí</option>
                         <option value="not">No</option>
                     </select>
@@ -165,12 +170,17 @@
                 <div class="form-group">
                     <label>Tipo de Régimen de Afiliación: </label><br />
                     <select name="AFILIACION" class="input">
-                        <option selected>Seleccionar</option>
+                        
                         <option value="subsidiado">Subsidiado </option>
                         <option value="contributivo">Contributivo </option>
                     </select>
                 </div>
-
+                @if (ViewData["Mensaje"] != null)
+                {
+                    <div class="alert alert-danger" role="alert" style="width:fit-content"  >
+                        @ViewData["Mensaje"]
+                    </div>
+                }
                 <button type="submit" class="btn btn-black" style="color:white;">Registrarse</button>
                 <button type="submit" class="btn btn-secondary">@Html.ActionLink("Iniciar sesión", "Index", "AccesoCiud", new { @style = "color: white; text-decoration: none;" })</button>
             </form>
