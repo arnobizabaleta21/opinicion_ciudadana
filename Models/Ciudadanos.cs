@@ -24,10 +24,10 @@ namespace opinicion_ciudadana.Models
         public string CONDICION_DISCAPACIDAD { get; set; }
         public string ESTRATO_RESIDENCIA { get; set; }
         public string NIVEL_EDUCATIVO { get; set; }
-        public string ACCESO_DISPOSITIVOS { get; set; }
+        public bool ACCESO_DISPOSITIVOS { get; set; }
         public string TIPO_DISPOSITIVOS { get; set; }
         public bool CONECTIVIDAD { get; set; }
-        public bool AFILIACION { get; set; }
+        public string AFILIACION { get; set; }
 
     }
 }

@@ -2,35 +2,34 @@
     Layout = null;
 }
 
-<!DOCTYPE html>
+<link rel="stylesheet" href="~/Content/CSSUser/stylesCiud.css" type="text/css" />
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Inicio de sesión Ciudadano</title>
-    @Styles.Render("~/Content/css")
-</head>
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4 col-sm-offset-4">
-                <form class="bg-info" style="padding:1em">
-                    <div class="form-group">
-                        <label>Usuario: </label>
-                        <input type="text" placeholder="Ingrese usuario" required />
-                    </div>
-
-                    <div class="form-group">
-                        <label>Contraseña: </label>
-                        <input type="password" placeholder="Ingrese contraseña" required />
-                    </div>
-
-                    <input type="submit" value="Iniciar sesión"/>
-                </form>   
-            </div>
+<div class="sidenav">
+    <div class="login-main-text">
+        <h1>Participación ciudadana</h1><br>
+        <h2>Inicio de sesión</h2><br><br><br>
+        <p>Inicia sesión o regístrate desde aquí para acceder.</p>
+    </div>
+</div>
+<div class="main">
+    <div class="col-md-6 col-sm-12">
+        <div class="login-form">
+            <form method="post" action="@Url.Action("Index","AccesoCiud")">
+                <div class="form-group">
+                    <label>Usuario: </label>
+                    <input type="text" name="NUM_DOCUMENTO" class="input" placeholder="Ingrese usuario" required />
+                </div>
+                <div class="form-group">
+                    <label>Contraseña: </label>
+                    <input type="password" name="CONTRASENA" class="input" placeholder="Ingrese contraseña" required />
+                </div>
+                <button type="submit" class="btn btn-black">Iniciar sesión</button>
+                <button type="submit" class="btn btn-secondary">@Html.ActionLink("Registrarse", "Registrar", "AccesoCiud", new { @style = "color: white; text-decoration: none;" })</button>
+            </form>
         </div>
     </div>
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-</body>
-</html>
+</div>
+

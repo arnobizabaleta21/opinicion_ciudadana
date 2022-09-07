@@ -2,186 +2,179 @@
     Layout = null;
 }
 
-<!DOCTYPE html>
+<link rel="stylesheet" href="~/Content/CSSUser/stylesCiud.css" type="text/css" />
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Registro Ciudadano</title>
-    @Styles.Render("~/Content/css")
-</head>
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4 col-sm-offset-4">
-                <form action="@Url.Action("Registrar","AccesoCiud")" class="bg-info" style="padding:1em" method="post">
-                    <div class="form-group">
-                        <label>Tipo de documento: </label>
-                        <select name="TIPO_DOCUMENTO" class="form-control" required>
-                            <option value="CC">Cédula de ciudadanía</option>
-                            <option value="TI">Tarjeta de identidad </option>
-                            <option value="CE">Cédula de extranjería</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Número de documento: </label>
-                        <input type="number" class="form-control" name="NUM_DOCUMENTO" required />
-                    </div>
-                    <div class="form-group">
-                        <label>Nombres Completos: </label>
-                        <input type="text" class="form-control" name="NOMBRES_COMPLETOS" required />
-                    </div>
-                    <div class="form-group">
-                        <label>Apellidos: </label>
-                        <input type="text" class="form-control" name="APELLIDOS" required />
-                    </div>
-                    <div class="form-group">
-                        <label>Sexo: </label>
-                        <select name="SEXO" class="form-control" required>
-                            <option selected>Seleccionar</option>
-                            <option value="Hombre">Hombre</option>
-                            <option value="Mujer"> Mujer</option>
-                            <option value="Intersexual">InterSexual</option>
-                            <option value="Indefinido"> Indefinido</option>
-                            <option value="NoDice">Prefiero no decir</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Teléfono celular: </label>
-                        <input type="text" class="form-control" name="TELEFONO_CELULAR" />
-                    </div>
-
-                    <div class="form-group">
-                        <label>Telefono Fijo: </label>
-                        <input type="text" class="form-control" name="TELEFONO_FIJO" />
-                    </div>
-
-                    <div class="form-group">
-                        <label>Correo electrónico: </label>
-                        <input type="email" class="form-control" name="CORREO_ELECTRONICO" required />
-                    </div>
-
-                    <div class="form-group">
-                        <label>Municipio: </label>
-                        <input type="text" class="form-control" name="MUNICIPIO" required />
-                    </div>
-
-                    <div class="form-group">
-                        <label>Dirección: </label>
-                        <input type="text" class="form-control" name="DIRECCION" />
-                    </div>
-
-                    <div class="form-group">
-                        <label>Barrio/Vereda</label>
-                        <input type="text" class="form-control" name="BARRIO_VEREDA" required />
-                    </div>
-
-                    <div class="form-group">
-                        <label>Fecha de nacimiento: </label>
-                        <input type="date" class="form-control" name="FECHA_NACIMIENTO" required />
-                    </div>
-
-                    <div class="form-group">
-                        <label>Etnia</label>
-                        <select name="ETNIA" required>
-                            <option selected>Seleccionar</option>
-                            <option value="Negro">Negro</option>
-                            <option value="Indigena">Indigena</option>
-                            <option value="Raizal">Raizal</option>
-                            <option value="Palenquero">Palenquero</option>
-                            <option value="Otro">Otro</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Condición de Discapacidad</label>
-                        <select name="CONDICION_DISCAPACIDAD" required>
-                            <option selected>Seleccionar</option>
-                            <option value="fisica">Discapacidad Física o Motora</option>
-                            <option value="sensorial">Discapacidad Sensorial</option>
-                            <option value="intelectual">Discapacidad intelectual</option>
-                            <option value="psiquica">Discapacidad Psíquica</option>
-                            <option value="multiple">Discapacidad múltiple</option>
-                            <option value="Otro">Otro</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Estrato de residencia: </label>
-                        <input type="number" class="form-control" name="ESTRATO_RESIDENCIA" required />
-                    </div>
-
-                    <div class="form-group">
-                        <label>Último nivel educativo alcanzado: </label>
-                        <select name="NIVEL_EDUCATIVO" required>
-                            <option selected>Seleccionar</option>
-                            <option value="preescolar">Educación preescolar</option>
-                            <option value="basica">Educación básica</option>
-                            <option value="media">Educación media</option>
-                            <option value="superior">Educación superior</option>
-                            <option value="profesional">Educación técnica profesional y tecnológica</option>
-                            <option value="universidad">Educación universitaria</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>¿Cuenta con acceso a dispositivos tecnológicos?</label>
-                        <select name="ACCESO_DISPOSITIVOS" required>
-                            <option selected>Seleccionar</option>
-                            <option value="yes">Si</option>
-                            <option value="not">No</option>
-                        </select>
-                        <!-- <label><input type="checkbox" value="yes">Sí</label><br />
-        <label><input type="checkbox" value="not">No</label> -->
-                    </div>
-
-                    <div class="form-group">
-                        <label>Si, la respuesta 3.1 fue afirmativa ¿cuál o cuáles?</label><br />
-                        <select name="TIPO_DISPOSITIVOS" required>
-                            <option selected>Seleccionar</option>
-                            <option value="pc">Computador</option>
-                            <option value="tablet">Tablet</option>
-                        </select>
-                        <label>Otro - ¿cuál?: <input type="text" /></label>
-
-                        <!--<label><input type="checkbox" value="movil">T. Móvil</label><br />
-    <label><input type="checkbox" value="pc">Computador</label><br />
-    <label><input type="checkbox" value="tablet">Tablet</label><br />
-    <label><input type="checkbox" value="otro">Otro- ¿cuál?<input type="text" /></label> -->
-                    </div>
-
-                    <div class="form-group">
-                        <label>¿Cuenta con conectividad a internet? </label><br />
-                        <select name="CONECTIVIDAD">
-                            <option value="yes">Sí </option>
-                            <option value="not">No </option>
-                        </select>
-                        <!--
-            <label><input type="checkbox" value="yes">Sí</label><br />
-    <label><input type="checkbox" value="not">No</label><br />
-    -->
-
-                    </div>
-
-                    <div class="form-group">
-                        <label>Tipo de Régimen de Afiliación</label><br />
-                        <select name="AFILIACION">
-                            <option value="subsidiado">Subsidiado </option>
-                            <option value="contributivo">Contributivo </option>
-                        </select>
-                    </div>
-                        <!--
-
-                                <label><input type="checkbox" value="subsidiado">Subsidiado</label><br />
-                                <label><input type="checkbox" value="contributivo">Contributivo</label><br />
-                            </div>
-    -->
-                        <input type="submit" value="Registrarse" />
-</form>
+<div class="sidenav">
+    <div class="login-main-text">
+        <h1>Participación ciudadana</h1><br>
+        <h2>Registrarse</h2><br><br><br>
+        <p>Inicia sesión o regístrate desde aquí para acceder.</p>
+    </div>
+</div>
+<div class="main">
+    <div class="col-md-6 col-sm-12">
+        <div class="login-form">
+            <form action="@Url.Action("Registrar","AccesoCiud")" method="post">
+                <div class="form-group">
+                    <label>Tipo de documento: </label>
+                    <select name="TIPO_DOCUMENTO" class="input" required>
+                        <option selected>Seleccionar</option>
+                        <option value="CC">Cédula de ciudadanía</option>
+                        <option value="TI">Tarjeta de identidad </option>
+                        <option value="CE">Cédula de extranjería</option>
+                    </select>
                 </div>
-            </div>
+
+                <div class="form-group">
+                    <label>Número de documento: </label>
+                    <input type="number" class="input" name="NUM_DOCUMENTO" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Nombres Completos: </label>
+                    <input type="text" class="input" name="NOMBRES_COMPLETOS" required />
+                </div>
+                <div class="form-group">
+                    <label>Apellidos: </label>
+                    <input type="text" class=" input" name="APELLIDOS" required />
+                </div>
+                <div class="form-group">
+                    <label>Sexo: </label><br />
+                    <select name="SEXO" class="input" required>
+                        <option selected>Seleccionar</option>
+                        <option value="Hombre">Hombre</option>
+                        <option value="Mujer"> Mujer</option>
+                        <option value="Intersexual">InterSexual</option>
+                        <option value="Indefinido"> Indefinido</option>
+                        <option value="NoDice">Prefiero no decir</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Teléfono celular: </label>
+                    <input type="text" class="input" name="TELEFONO_CELULAR" />
+                </div>
+
+                <div class="form-group">
+                    <label>Telefono Fijo: </label>
+                    <input type="text" class="input" name="TELEFONO_FIJO" />
+                </div>
+
+                <div class="form-group">
+                    <label>Correo electrónico: </label>
+                    <input type="email" class="input" name="CORREO_ELECTRONICO" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Municipio: </label>
+                    <input type="text" class="input" name="MUNICIPIO" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Dirección: </label>
+                    <input type="text" class="input" name="DIRECCION" />
+                </div>
+
+                <div class="form-group">
+                    <label>Barrio/Vereda: </label>
+                    <input type="text" class="input" name="BARRIO_VEREDA" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Fecha de nacimiento: </label>
+                    <input type="date" class="input" name="FECHA_NACIMIENTO" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Etnia: </label><br />
+                    <select name="ETNIA" class="input" required>
+                        <option selected>Seleccionar</option>
+                        <option value="Negro">Negro</option>
+                        <option value="Mulato">Mulato</option>
+                        <option value="Indigena">Indigena</option>
+                        <option value="Afrodescendiente">Afrodescendiente</option>
+                        <option value="Raizal">Raizal</option>
+                        <option value="Palenquero">Palenquero</option>
+                        <option value="Gitano">Gitano</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Condición de Discapacidad: </label><br />
+                    <select name="CONDICION_DISCAPACIDAD" class="input" required>
+                        <option selected>Seleccionar</option>
+                        <option value="Fisica">Discapacidad Física o Motora</option>
+                        <option value="Sensorial">Discapacidad Sensorial</option>
+                        <option value="Intelectual">Discapacidad intelectual</option>
+                        <option value="Psiquica">Discapacidad Psíquica</option>
+                        <option value="Multiple">Discapacidad múltiple</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Estrato de residencia: </label>
+                    <input type="number" class="input" name="ESTRATO_RESIDENCIA" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Último nivel educativo alcanzado: </label>
+                    <select name="NIVEL_EDUCATIVO" class="input" required>
+                        <option selected>Seleccionar</option>
+                        <option value="Preescolar">Educación preescolar</option>
+                        <option value="Basica">Educación básica</option>
+                        <option value="Media">Educación media</option>
+                        <option value="Superior">Educación superior</option>
+                        <option value="Profesional">Educación técnica profesional y tecnológica</option>
+                        <option value="Universidad">Educación universitaria</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>¿Cuenta con acceso a dispositivos tecnológicos?</label><br />
+                    <select name="ACCESO_DISPOSITIVOS" class="input" required>
+                        <option selected>Seleccionar</option>
+                        <option value="yes">Si</option>
+                        <option value="not">No</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Si, la respuesta 3.1 fue afirmativa ¿cuál o cuáles?</label><br />
+                    <select name="TIPO_DISPOSITIVOS" class="input" required>
+                        <option selected>Seleccionar</option>
+                        <option value="computador">Computador</option>
+                        <option value="tablet">Tablet</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>¿Cuenta con conectividad a internet? </label><br />
+                    <select name="CONECTIVIDAD" class="input">
+                        <option selected>Seleccionar</option>
+                        <option value="yes">Sí</option>
+                        <option value="not">No</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Tipo de Régimen de Afiliación: </label><br />
+                    <select name="AFILIACION" class="input">
+                        <option selected>Seleccionar</option>
+                        <option value="subsidiado">Subsidiado </option>
+                        <option value="contributivo">Contributivo </option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-black" style="color:white;">Registrarse</button>
+                <button type="submit" class="btn btn-secondary">@Html.ActionLink("Iniciar sesión", "Index", "AccesoCiud", new { @style = "color: white; text-decoration: none;" })</button>
+            </form>
         </div>
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
-    </body>
-    </html>
+    </div>
+</div>
+

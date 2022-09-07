@@ -7,6 +7,8 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using opinicion_ciudadana.Models;
+using opinicion_ciudadana.Logica;
+using System.Web.Security;
 
 namespace opinicion_ciudadana.Controllers
 {
@@ -23,7 +25,23 @@ namespace opinicion_ciudadana.Controllers
         {
             return View();
         }
-
+        [HttpPost]
+        public ActionResult Index(string NUM_DOCUMENTO, string CONTRASENA)
+        {
+            LOCiudadanos lo = new LOCiudadanos();
+            Ciudadanos ciudadano = lo.EncontrarCiudadano(NUM_DOCUMENTO, CONTRASENA);
+            if (ciudadano.NOMBRES_COMPLETOS != null)
+            {
+                FormsAuthentication.SetAuthCookie(ciudadano.NUM_DOCUMENTO, false);
+                Session["Admin"] = ciudadano;
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                ViewData["Mensaje"] = "Usuario no encontrado";
+                return View();
+            }
+        }
         public ActionResult Registrar()
         {
             return View();
@@ -54,7 +72,7 @@ namespace opinicion_ciudadana.Controllers
             cmd.Parameters.AddWithValue("@CONDICION_DISCAPACIDAD", ciudadano.CONDICION_DISCAPACIDAD);
             cmd.Parameters.AddWithValue("@ESTRATO_RESIDENCIA", ciudadano.ESTRATO_RESIDENCIA);
             cmd.Parameters.AddWithValue("@NIVEL_EDUCATIVO", ciudadano.NIVEL_EDUCATIVO);
-            cmd.Parameters.AddWithValue("@ACCESO_DISPOSITIVOS", ciudadano.ACCESO_DISPOSITIVOS);
+            cmd.Parameters.AddWithValue("@ACCESO_DISPOSITIVOS",  ciudadano.ACCESO_DISPOSITIVOS);
             cmd.Parameters.AddWithValue("@TIPO_DISPOSITIVOS", ciudadano.TIPO_DISPOSITIVOS);
             cmd.Parameters.AddWithValue("@CONECTIVIDAD", ciudadano.CONECTIVIDAD);
             cmd.Parameters.AddWithValue("@AFILIACION", ciudadano.AFILIACION);
@@ -62,7 +80,7 @@ namespace opinicion_ciudadana.Controllers
             SqlParameter regis = new SqlParameter("@REGISTRADO",SqlDbType.Bit);
             SqlParameter mens = new SqlParameter("@MENSAJE", SqlDbType.VarChar,100);
             regis.Direction = ParameterDirection.Output;
-            mens.Direction = ParameterDirection.Input;
+            mens.Direction = ParameterDirection.Output;
             cmd.Parameters.Add(regis);
             cmd.Parameters.Add(mens);
             cmd.CommandType = CommandType.StoredProcedure;

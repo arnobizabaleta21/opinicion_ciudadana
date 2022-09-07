@@ -11,14 +11,22 @@
     <div class="login-main-text">
         <h1>Participación ciudadana</h1><br>
         <h2>Administración</h2><br><br><br>
-        <h2>Inicio de sesión</h2><br><br><br>
+        <h2>Registrarse</h2><br><br><br>
         <p>Inicia sesión o regístrate desde aquí para acceder.</p>
     </div>
 </div>
 <div class="main">
     <div class="col-md-6 col-sm-12">
         <div class="login-form">
-            <form method="post" action="@Url.Action("Index","AccesoAdmin")">
+            <form method="post" action="@Url.Action("Registrar","AccesoAdmin")">
+                <div class="form-group">
+                    <label>Nombres completos: </label>
+                    <input type="text" name="NOMBRE_ADMIN" class="input" placeholder="Ingrese nombres completos" required />
+                </div>
+                <div class="form-group">
+                    <label>Apellidos completos: </label>
+                    <input type="text" name="APELLIDOS" class="input" placeholder="Ingrese apellidos completos" required />
+                </div>
                 <div class="form-group">
                     <label>Correo electrónico: </label>
                     <input type="text" name="CORREO_ELECTRONICO" class="input" placeholder="Ingrese correo electrónico" required />
@@ -27,8 +35,12 @@
                     <label>Contraseña: </label>
                     <input type="password" name="CONTRASENA" class="input" placeholder="Ingrese contraseña" required />
                 </div>
-                <button type="submit" class="btn btn-black">Iniciar sesión</button>
-                <button type="submit" class="btn btn-secondary">@Html.ActionLink("Registrarse", "Registrar", "AccesoAdmin", new { @style = "color: white; text-decoration: none;" })</button>
+                <div class="form-group">
+                    <label>Confirmar contraseña: </label>
+                    <input type="password" name="ConfirmarCOntrasena" class="input" placeholder="Ingrese nuevamente la contraseña" required />
+                </div>
+                <button type="submit" class="btn btn-black" style="color:white;">Registrarse</button>
+                <button type="submit" class="btn btn-secondary">@Html.ActionLink("Iniciar sesión", "Index", "AccesoAdmin", new { @style = "color: white; text-decoration: none;" })</button>
             </form>
         </div>
     </div>

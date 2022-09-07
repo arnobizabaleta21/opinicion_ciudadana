@@ -9,6 +9,12 @@ namespace opinicion_ciudadana.Controllers
     public class AdminController : Controller
     {
         // GET: Admin
+
+        // GET: Admin
+        public ActionResult Home()
+        {
+            return View();
+        }
         public ActionResult Index()
         {
             return View();
@@ -16,6 +22,7 @@ namespace opinicion_ciudadana.Controllers
 
         public ActionResult crearPregunta()
         {
+        
             return View();
         }
     }
