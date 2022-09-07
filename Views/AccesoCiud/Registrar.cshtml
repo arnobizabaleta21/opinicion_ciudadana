@@ -1,0 +1,187 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Registro Ciudadano</title>
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-4">
+                <form action="@Url.Action("Registrar","AccesoCiud")" class="bg-info" style="padding:1em" method="post">
+                    <div class="form-group">
+                        <label>Tipo de documento: </label>
+                        <select name="TIPO_DOCUMENTO" class="form-control" required>
+                            <option value="CC">Cédula de ciudadanía</option>
+                            <option value="TI">Tarjeta de identidad </option>
+                            <option value="CE">Cédula de extranjería</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Número de documento: </label>
+                        <input type="number" class="form-control" name="NUM_DOCUMENTO" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Nombres Completos: </label>
+                        <input type="text" class="form-control" name="NOMBRES_COMPLETOS" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Apellidos: </label>
+                        <input type="text" class="form-control" name="APELLIDOS" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Sexo: </label>
+                        <select name="SEXO" class="form-control" required>
+                            <option selected>Seleccionar</option>
+                            <option value="Hombre">Hombre</option>
+                            <option value="Mujer"> Mujer</option>
+                            <option value="Intersexual">InterSexual</option>
+                            <option value="Indefinido"> Indefinido</option>
+                            <option value="NoDice">Prefiero no decir</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Teléfono celular: </label>
+                        <input type="text" class="form-control" name="TELEFONO_CELULAR" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Telefono Fijo: </label>
+                        <input type="text" class="form-control" name="TELEFONO_FIJO" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Correo electrónico: </label>
+                        <input type="email" class="form-control" name="CORREO_ELECTRONICO" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Municipio: </label>
+                        <input type="text" class="form-control" name="MUNICIPIO" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Dirección: </label>
+                        <input type="text" class="form-control" name="DIRECCION" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Barrio/Vereda</label>
+                        <input type="text" class="form-control" name="BARRIO_VEREDA" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Fecha de nacimiento: </label>
+                        <input type="date" class="form-control" name="FECHA_NACIMIENTO" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Etnia</label>
+                        <select name="ETNIA" required>
+                            <option selected>Seleccionar</option>
+                            <option value="Negro">Negro</option>
+                            <option value="Indigena">Indigena</option>
+                            <option value="Raizal">Raizal</option>
+                            <option value="Palenquero">Palenquero</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Condición de Discapacidad</label>
+                        <select name="CONDICION_DISCAPACIDAD" required>
+                            <option selected>Seleccionar</option>
+                            <option value="fisica">Discapacidad Física o Motora</option>
+                            <option value="sensorial">Discapacidad Sensorial</option>
+                            <option value="intelectual">Discapacidad intelectual</option>
+                            <option value="psiquica">Discapacidad Psíquica</option>
+                            <option value="multiple">Discapacidad múltiple</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Estrato de residencia: </label>
+                        <input type="number" class="form-control" name="ESTRATO_RESIDENCIA" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Último nivel educativo alcanzado: </label>
+                        <select name="NIVEL_EDUCATIVO" required>
+                            <option selected>Seleccionar</option>
+                            <option value="preescolar">Educación preescolar</option>
+                            <option value="basica">Educación básica</option>
+                            <option value="media">Educación media</option>
+                            <option value="superior">Educación superior</option>
+                            <option value="profesional">Educación técnica profesional y tecnológica</option>
+                            <option value="universidad">Educación universitaria</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>¿Cuenta con acceso a dispositivos tecnológicos?</label>
+                        <select name="ACCESO_DISPOSITIVOS" required>
+                            <option selected>Seleccionar</option>
+                            <option value="yes">Si</option>
+                            <option value="not">No</option>
+                        </select>
+                        <!-- <label><input type="checkbox" value="yes">Sí</label><br />
+        <label><input type="checkbox" value="not">No</label> -->
+                    </div>
+
+                    <div class="form-group">
+                        <label>Si, la respuesta 3.1 fue afirmativa ¿cuál o cuáles?</label><br />
+                        <select name="TIPO_DISPOSITIVOS" required>
+                            <option selected>Seleccionar</option>
+                            <option value="pc">Computador</option>
+                            <option value="tablet">Tablet</option>
+                        </select>
+                        <label>Otro - ¿cuál?: <input type="text" /></label>
+
+                        <!--<label><input type="checkbox" value="movil">T. Móvil</label><br />
+    <label><input type="checkbox" value="pc">Computador</label><br />
+    <label><input type="checkbox" value="tablet">Tablet</label><br />
+    <label><input type="checkbox" value="otro">Otro- ¿cuál?<input type="text" /></label> -->
+                    </div>
+
+                    <div class="form-group">
+                        <label>¿Cuenta con conectividad a internet? </label><br />
+                        <select name="CONECTIVIDAD">
+                            <option value="yes">Sí </option>
+                            <option value="not">No </option>
+                        </select>
+                        <!--
+            <label><input type="checkbox" value="yes">Sí</label><br />
+    <label><input type="checkbox" value="not">No</label><br />
+    -->
+
+                    </div>
+
+                    <div class="form-group">
+                        <label>Tipo de Régimen de Afiliación</label><br />
+                        <select name="AFILIACION">
+                            <option value="subsidiado">Subsidiado </option>
+                            <option value="contributivo">Contributivo </option>
+                        </select>
+                    </div>
+                        <!--
+
+                                <label><input type="checkbox" value="subsidiado">Subsidiado</label><br />
+                                <label><input type="checkbox" value="contributivo">Contributivo</label><br />
+                            </div>
+    -->
+                        <input type="submit" value="Registrarse" />
+</form>
+                </div>
+            </div>
+        </div>
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+    </body>
+    </html>

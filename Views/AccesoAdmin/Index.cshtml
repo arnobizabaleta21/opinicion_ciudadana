@@ -1,0 +1,36 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Registro Ciudadano</title>
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-4">
+                <form class="bg-info" style="padding:1em">
+                    <div class="form-group">
+                        <label>Correo electrónico: </label>
+                        <input type="email" placeholder="Ingrese correo electrónico" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Contraseña: </label>
+                        <input type="password" placeholder="Ingrese contraseña" required />
+                    </div>
+
+                    <input type="submit" value="Iniciar sesión" />
+                </form>
+            </div>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>
