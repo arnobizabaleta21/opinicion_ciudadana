@@ -28,20 +28,23 @@
                     <label>Contraseña: </label>
                     <input type="password" name="CONTRASENA" class="input" placeholder="Ingrese contraseña" required />
                 </div>
-                  
-                <div class="alert alert-info" role="alert">
-                    @ViewBag.Message
-                </div>
-               
-              
+                @if (ViewData["Mensaje"] == null) { 
+                
+                    <div class="alert alert-info" role="alert" style="width:fit-content;">
+                        @ViewBag.Message
+                    </div>
+                }
+                    
+
+
                 <button type="submit" class="btn btn-black">Iniciar sesión</button>
                 <button type="submit" class="btn btn-secondary">@Html.ActionLink("Registrarse", "Registrar", "AccesoCiud", new { @style = "color: white; text-decoration: none;" })</button>
-                @if(ViewData["Mensaje"] != null)
-            {
-                <div class="alert alert-danger" role="alert" >
-                    @ViewData["Mensaje"]
-                </div>
-            }
+                @if (ViewData["Mensaje"] != null)
+                {
+                    <div class="alert alert-danger" role="alert" style="margin: 0.5em;">
+                        @ViewData["Mensaje"]
+                    </div>
+                }
             </form>
         </div>
     </div>

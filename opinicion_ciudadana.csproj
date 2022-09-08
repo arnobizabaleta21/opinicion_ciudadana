@@ -125,6 +125,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CiudadanoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MantenimientoSondeoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -133,6 +134,11 @@
     <Compile Include="Models\Administrador.cs" />
     <Compile Include="Models\Ciudadanos.cs" />
     <Compile Include="Models\Informes.cs" />
+    <Compile Include="Models\MantenimientoSondeo.cs" />
+    <Compile Include="Models\Participadores_Sondeo.cs" />
+    <Compile Include="Models\Preguntas.cs" />
+    <Compile Include="Models\Preguntas_Del_Sondeo.cs" />
+    <Compile Include="Models\Sondeos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -141,6 +147,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\CSSUser\stylesCiud.css" />
+    <Content Include="Content\CSSUser\stylesSondeo.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -177,15 +184,17 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\AccesoCiud\Index.cshtml" />
     <Content Include="Views\AccesoCiud\Registrar.cshtml" />
     <Content Include="Views\AccesoAdmin\Index.cshtml" />
-    <Content Include="Views\Admin\crearPregunta.cshtml" />
     <Content Include="Views\AccesoAdmin\Registrar.cshtml" />
     <Content Include="Views\Admin\Home.cshtml" />
+    <Content Include="Views\Home\ValidarCertificaciones.cshtml" />
+    <Content Include="Views\MantenimientoSondeo\Index.cshtml" />
+    <Content Include="Views\MantenimientoSondeo\Details.cshtml" />
+    <Content Include="Views\MantenimientoSondeo\Create.cshtml" />
+    <Content Include="Views\MantenimientoSondeo\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

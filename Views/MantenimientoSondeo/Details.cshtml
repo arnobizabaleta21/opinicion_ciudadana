@@ -1,0 +1,106 @@
+﻿@model opinicion_ciudadana.Models.Sondeos
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Sondeos</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.COD_SONDEO)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.COD_SONDEO)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.NOMBRE)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NOMBRE)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.DESCRIPCION)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DESCRIPCION)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.TEMA)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TEMA)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.FECHA_CREACION)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.FECHA_CREACION)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.HORA_CREACION)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.HORA_CREACION)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.FECHA_FINAL)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.FECHA_FINAL)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.HORA_FINAL)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.HORA_FINAL)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.RUTA_IMG)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.RUTA_IMG)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.COD_INFORME)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.COD_INFORME)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new {  id = Model.COD_SONDEO }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

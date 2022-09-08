@@ -39,7 +39,7 @@ namespace opinicion_ciudadana.Controllers
             }
             else
             {
-                ViewData["Mensaje"] = "Usuario no encontrado";
+                ViewData["Mensaje"] = "Usuario o contraseña no coinciden";
                 return View();
             }
         }

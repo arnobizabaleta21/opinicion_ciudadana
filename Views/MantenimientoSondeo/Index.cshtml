@@ -1,0 +1,85 @@
+﻿@model IEnumerable<opinicion_ciudadana.Models.Sondeos>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Agregar sondeo", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.COD_SONDEO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NOMBRE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DESCRIPCION)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TEMA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FECHA_CREACION)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HORA_CREACION)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FECHA_FINAL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HORA_FINAL)
+            </th>
+           
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.COD_SONDEO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NOMBRE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DESCRIPCION)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TEMA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FECHA_CREACION)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HORA_CREACION)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FECHA_FINAL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HORA_FINAL)
+            </td>
+           
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {id=item.COD_SONDEO }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.COD_SONDEO }) |
+                
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

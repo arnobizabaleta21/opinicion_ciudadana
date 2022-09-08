@@ -31,10 +31,9 @@
                 </div>
                 <button type="submit" class="btn btn-black">Iniciar sesión</button>
                 <button type="submit" class="btn btn-secondary">@Html.ActionLink("Registrarse", "Registrar", "AccesoAdmin", new { @style = "color: white; text-decoration: none;" })</button>
-
                 @if (ViewData["Mensaje"] != null)
                 {
-                    <div class="alert alert-danger" role="alert">
+                    <div class="alert alert-danger" role="alert" style="margin: 0.5em;">
                         @ViewData["Mensaje"]
                     </div>
                 }

@@ -1,0 +1,79 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Participacion ciudadana</title>
+    <link rel="stylesheet" href="~/Content/CSSUser/stylesSondeo.css" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <header>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Participación ciudadana", "Home", "AccesoAdmin", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Sondeos", "", "")</li>
+                        <li>@Html.ActionLink("Preguntas", "", "")</li>
+                        <li>@Html.ActionLink("Informes", "", "")</li>
+                        <li>@Html.ActionLink("Validar certificados", "ValidarCertificaciones", "Home")</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="main">
+            <div class="col-md-6 col-sm-12">
+                <div class="login-form">
+                    <form method="post" action="@Url.Action("Create","MantenimientoSondeo")">
+                        <div class="form-group">
+                            <label>Nombre: </label>
+                            <input type="text" name="NOMBRE" class="input" placeholder="Ingrese nombre del sondeo" required />
+                        </div>
+                        <div class="form-group">
+                            <label>Descripcion: </label>
+                            <input type="text" name="DESCRIPCION" class="input" placeholder="Ingrese descripcion" required />
+                        </div>
+                        <div class="form-group">
+                            <label>Tema: </label>
+                            <input type="text" name="TEMA" class="input" placeholder="Ingrese tema" required />
+                        </div>
+                        <div class="form-group">
+                            <label>Fecha de cierre: </label>
+                            <input type="date" class="input" name="FECHA_FINAL" required />
+                        </div>
+                        <div class="form-group">
+                            <label>Hora de cierre: </label>
+                            <input type="time" class="input" name="HORA_FINAL" required />
+                        </div>
+                        <button type="submit" class="btn btn-black">Guardar</button>
+                        <button type="submit" class="btn btn-secondary">Cancelar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>

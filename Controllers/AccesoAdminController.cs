@@ -37,7 +37,7 @@ namespace opinicion_ciudadana.Controllers
             {
                 FormsAuthentication.SetAuthCookie(admin.CORREO_ELECTRONICO, false);
                 Session["Admin"] = admin;
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "MantenimientoSondeo");
             }
             else
             {

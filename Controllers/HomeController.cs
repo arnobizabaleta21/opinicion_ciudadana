@@ -26,5 +26,18 @@ namespace opinicion_ciudadana.Controllers
 
             return View();
         }
+
+        public ActionResult SinPermiso()
+        {
+            ViewBag.Message = "Usted no tiene permisos para acceder a este página";
+
+            return View();
+        }
+
+        public ActionResult ValidarCertificaciones()
+        {
+            return View();
+        }
+
     }
 }
